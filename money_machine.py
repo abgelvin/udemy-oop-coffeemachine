@@ -15,7 +15,7 @@ class MoneyMachine:
 
     def report(self):
         """Prints the current profit"""
-        print(f"Money: {self.CURRENCY}{self.profit}")
+        print(f"Money: {self.CURRENCY}{self.profit:.2f}")
 
     def process_coins(self):
         """Returns the total calculated from coins inserted."""
@@ -29,7 +29,7 @@ class MoneyMachine:
         self.process_coins()
         if self.money_received >= cost:
             change = round(self.money_received - cost, 2)
-            print(f"Here is {self.CURRENCY}{change} in change.")
+            print(f"Here is {self.CURRENCY}{change:.2f} in change.")
             self.profit += cost
             self.money_received = 0
             return True
