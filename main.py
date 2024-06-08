@@ -14,15 +14,12 @@ def run_machine():
     while is_on:
         options = menu.get_items()
         order_name = (input(f"What would you like? ({options}): ")).lower()
-
         if order_name == 'off':
             print('Good-bye.')
             is_on = False
-                    
         elif order_name == 'report':
             coffee_maker.report()
             money_machine.report()
-                    
         else :
             drink = menu.find_drink(order_name)
             if drink:
